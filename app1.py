@@ -11,5 +11,6 @@ def translate(w):
 
 
 result = input("enter word: ")
+result = result.lower()
 
 print(translate(result))
