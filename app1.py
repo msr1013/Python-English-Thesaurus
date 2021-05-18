@@ -8,9 +8,13 @@ def translate(w):
     if w in data:
         return data[w]
     elif len(get_close_matches(w, data.keys())) > 0:
-        return "Did you mean %s instead?" % get_close_matches(w, data.keys())[0]
-    else:
-        return "The word doesn't exist,please check it"
+        inp = input("Did you mean %s instead? Enter y if Yes or n if No :" %
+                    get_close_matches(w, data.keys())[0])
+        if inp == 'y':
+            print(data[get_close_matches(w, data.keys())[0]])
+
+        else:
+            return "The word doesn't exist,please check it"
 
 
 result = input("enter word: ")
